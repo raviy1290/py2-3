@@ -1,0 +1,48 @@
+Design data structures and algorithms for in-memory file system
+Explain the data structures and algorithms that you would use to design an in-memory file system.
+Illustrate with an example in the code logic where possible.
+
+The DS to support in memory file structure would be tree with multiple childerns 
+(there can be a max limit set to the #childrens, ex: max numbers of file, folder supported inside a folder)
+
+Following would be a FileNode data structure-
+which can have childrens of type ("FILE" or "DIR")
+if type is "FILE" -> it will have content but no childrens (leaf node)
+otherwise it can have childrens but no content to it as such. 
+
+
+class FileType :
+	dir = "DIR"
+	file = "FILE"
+
+
+class FileNode :
+
+	maxChildrens = N
+
+	def __init__(self, name, file_type , content) :
+		self.label 		= name
+		self.type 		= file_type
+		self.content 	= content
+		self.childrens 	= list(FileNode)
+
+		for elem in self.childerns.items() :
+			elem = None
+
+	def add_child(fileNode) :
+		self.childerns.append(fileNode) if len(self.childerns) < N
+
+	def list_childrens() :
+		print(child.label) for child in self.childerns
+
+	def remove_child(childNode) :
+		remove childNode from parentNode.childerns[]
+
+	def list() :
+		print(child.label, child.type for child in self.childrens)
+
+
+
+
+
+
